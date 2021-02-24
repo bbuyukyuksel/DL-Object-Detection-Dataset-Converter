@@ -17,7 +17,7 @@ Nesne tespiti uygulamalarında destek gören veri setlerinin birbirine dönüş�
 ## Desteklenen Veri Seti Dönüşümleri;
 *	<i> Kitti Dataset > Tensorflow Object Detection Api CSV </i>
 ```python
-$ python Kitti2Csv.py --folder "kitti_dataset" --output "dataset.csv"
+$ python Kitti2Csv.py --folder "datasets/kitti" --output "out/dataset.csv"
 ```
 
 ## Smart Dataset Splitter
@@ -25,11 +25,11 @@ $ python Kitti2Csv.py --folder "kitti_dataset" --output "dataset.csv"
 ```python
 ## SmartSplitter
 #**required: dataset.csv
-$ python SmartSplitter4CSV.py --trainsplit 0.8 --iteration 200000 --csvfilename "dataset.csv" --imagefolderpath "kitti_dataset"
+$ python SmartSplitter4CSV.py --trainsplit 0.8 --iteration 200000 --csvfilename "out/dataset.csv" --imagefolderpath "datasets/kitti"
 
 ## Export
 #**required: register.json
-$ python SmartSplitter4CSV.py --csvfilename "dataset.csv" --imagefolderpath "kitti_dataset" --export True
+$ python SmartSplitter4CSV.py --csvfilename "out/dataset.csv" --imagefolderpath "datasets/kitti" --export True 
 ```
 
 ## Changelog
