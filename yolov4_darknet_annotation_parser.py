@@ -3,7 +3,7 @@ import glob
 import cv2
 
 
-dataset_dir = "yolov4_darknet_dataset"
+dataset_dir = "datasets/yolov4_darknet"
 
 files = glob.glob(f"{dataset_dir}/*")
 
@@ -38,9 +38,6 @@ for i, annotation in enumerate(annotations):
 
     pt1 = tuple(map(lambda x: int(x),(X, Y)))
     pt2 = tuple(map(lambda x: int(x),(X+Width, Y+Height)))
-    
-
-    #cv2.putText(Image, "x", pt1, cv2.FONT_HERSHEY_COMPLEX, 0.1, (0,255,0))
     cv2.rectangle(Image, pt1, pt2, (255,0,0), 1)
 
 cv2.imshow("Test", Image)
