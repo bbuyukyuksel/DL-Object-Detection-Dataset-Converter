@@ -19,7 +19,6 @@ class Kitti2Csv:
                 "bbox": tuple(map(self.try_parse_to_int, x.split(' ')[4:8])),
                 "annotation_filename": file_annotation,
                 "image_filename": self.get_image_by_annotation_file(file_annotation),
-
             }, f.readlines()))
     
     def manipulate_extension_by_annotation_file(self, file_annotation:str, extension:str):
@@ -62,7 +61,6 @@ class Kitti2Csv:
         def __init__(self, filename):
             self.filename = filename
             self.__create()
-
 
         def __create(self):
             with open(self.filename, 'w') as f:
@@ -113,6 +111,10 @@ def main(annotations_folder:str, csv_filename:str):
     mycsv = k2csv.CSV("test.csv")
     mycsv.write(annotations, image_details)
     '''
+    
+    csv_dir = os.path.dirname(csv_filename)
+    if csv_dir:
+        os.makedirs(csv_dir, exist_ok=True)
 
     k2csv = Kitti2Csv()
     mycsv = k2csv.CSV(csv_filename)
@@ -128,7 +130,7 @@ if __name__ == '__main__':
     usage = f'''
     ------------------------------------------------------------------------------------------------------------------------------------
         # Kitti to CSV
-        >> python Kitti2Csv.py --folder "kitti_dataset" --output "dataset.csv"
+        >> python Kitti2Csv.py --folder "datasets/kitti" --output "out/dataset.csv"
     ------------------------------------------------------------------------------------------------------------------------------------
     '''
 
