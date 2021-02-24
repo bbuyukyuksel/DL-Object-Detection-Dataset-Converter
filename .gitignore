@@ -141,3 +141,4 @@ cython_debug/
 register.json
 dataset.csv
 csv_dataset/
+kitti_dataset/
