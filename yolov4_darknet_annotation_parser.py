@@ -2,7 +2,6 @@ import os
 import glob
 import cv2
 
-
 dataset_dir = "datasets/yolov4_darknet"
 
 files = glob.glob(f"{dataset_dir}/*")
@@ -43,5 +42,3 @@ for i, annotation in enumerate(annotations):
 cv2.imshow("Test", Image)
 
 cv2.waitKey(0)
-
-
